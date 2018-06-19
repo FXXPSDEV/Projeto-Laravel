@@ -13,9 +13,17 @@ class Student extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('students', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name')->unique();
+            $table->string('cpf')->unique();
+            $table->string('rg')->unique();
+            $table->string('adress');
+            $table->string('phone');
+            $table->string('enrollment')->unique();
+            $table->timestamps();
+        });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -23,6 +31,6 @@ class Student extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('students');
     }
 }

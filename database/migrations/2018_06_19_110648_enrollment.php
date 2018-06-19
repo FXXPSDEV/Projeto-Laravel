@@ -13,7 +13,13 @@ class Enrollment extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('enrollment', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('course_id')->references('id')->on('course')->onDelete('cascade');
+            $table->string('student_id')->references('id')->on('student')->onDelete('cascade');
+            $table->boolean('authorized');
+            $table->timestamps();
+        });
     }
 
     /**
