@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('Enrollment');
-Route::resource('Course');
-Route::resource('Student');
+//Route::resource('Enrollment');
+//Route::resource('Course');
+//Route::resource('Student');
