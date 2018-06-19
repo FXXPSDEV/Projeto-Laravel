@@ -6,8 +6,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Estado
-                    <a href="/states/create" class="float-right btn btn-success">Novo Estado</a>
+                    Curso
+                    <a href="/Courses/create" class="float-right btn btn-success">Novo Curso</a>
                 </div>
 
                 <div class="card-body">
@@ -20,21 +20,22 @@
                     <table class="table">
                         <tr>
                             <th>ID</th>
-                            <th>Estado</th>
-                            <th>Sigla Estado</th>
-                            <th>Ações</th>
+                            <th>Curso</th>
+                            <th>Ementa</th>
+                            <th>Quantidade máxima</th>
                         </tr>
                         
-                        @foreach($states as $p)
+                        @foreach($Course as $p)
                             <tr>
                                 <td>{{ $p->id }}</td>
-                                <td>{{ $p->nameState }}</td>
-                                <td>{{ $p->sigla }}</td>
+                                <td>{{ $p->name }}</td>
+                                <td>{{ $p->ement }}</td>
+                                <td>{{ $p->max_students }}</td>
 
                                 <td>
-                                    <a href="/states/{{ $p->id }}/edit" class="btn btn-warning">Editar</a>
+                                    <a href="/course/{{ $p->id }}/edit" class="btn btn-warning">Editar</a>
 
-                                    {!! Form::open(['url' => "/states/$p->id", 'method' => 'delete']) !!}
+                                    {!! Form::open(['url' => "/course/$p->id", 'method' => 'delete']) !!}
                                         {{ Form::submit('Deletar',['class' => 'btn btn-danger']) }}
                                     {!! Form::close() !!}
                                 </td>
