@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                   Nova Cidade
+                   Novo Estudante
                 </div>
 
                 <div class="card-body">
@@ -16,10 +16,10 @@
                         </div>
                     @endif
 
-                    {!! Form::open(['url' => '/cities', 'method' => 'post']) !!}
+                    {!! Form::open(['url' => '/Students', 'method' => 'post']) !!}
                         
-                        {{ Form::label('nameCity', 'Nome', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
-                        {{ Form::text('nameCity',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
+                        {{ Form::label('nameS', 'Nome', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
+                        {{ Form::text('name',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
 
                         </br>
 
