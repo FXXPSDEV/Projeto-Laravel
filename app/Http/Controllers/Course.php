@@ -25,7 +25,7 @@ class Course extends Controller
         $p = new Courses;
         $p->name = $request->input('nome');
         $p->ement = $request->input('ement');
-        $p->max_student = $request->input('max_student');
+        $p->max_student = $request->input('max_students');
         
         if ($p->save()) {
             \Session::flash('status', 'Curso criado com sucesso.');
@@ -49,16 +49,16 @@ class Course extends Controller
         
         if ($p->save()) {
             \Session::flash('status', 'Curso atualizado com sucesso.');
-            return redirect('/course');
+            return redirect('/Courses');
         } else {
             \Session::flash('status', 'Ocorreu um erro ao atualizar o curso.');
-            return view('course.edit', ['course' => $p]);
+            return view('Courses.edit', ['course' => $p]);
         }
     }
     public function destroy($id) {
         $p = Courses::findOrFail($id);
         $p->delete();
         \Session::flash('status', 'Curso excluído com sucesso.');
-        return redirect('/course');
+        return redirect('/Courses');
     }
 }

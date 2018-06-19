@@ -8,6 +8,6 @@ class Courses extends Model
 {
     protected $fillable = ['name'];
     public function course(){
-        return $this->hasMany(Student::class);
+        return $this->hasMany(Students::class);
     }
 }

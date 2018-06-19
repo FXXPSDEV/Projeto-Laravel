@@ -61,22 +61,30 @@
                                      </a>
                                     <a class="dropdown-item" href="/course"
                                     onclick="event.preventDefault();
-                                                  document.getElementById('edit-form').submit();">
+                                                  document.getElementById('course-form').submit();">
                                      {{ __('Course') }}
                                     </a>
-                                    <a class="dropdown-item" href="/city"
+                                    <a class="dropdown-item" href="/student"
                                     onclick="event.preventDefault();
-                                                document.getElementById('get-form').submit();">
-                                    {{ __('City') }}
+                                                document.getElementById('student-form').submit();">
+                                    {{ __('Student') }}
+                                    </a>
+                                    <a class="dropdown-item" href="/enrollment"
+                                    onclick="event.preventDefault();
+                                                document.getElementById('enroll-form').submit();">
+                                    {{ __('Enrollment') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                    <form id="edit-form" action="/Courses"  style="display: none;">
+                                    <form id="course-form" action="/Courses"  style="display: none;">
                                         @csrf
                                     </form>
-                                    <form id="get-form" action="/city"  style="display: none;">
+                                    <form id="student-form" action="/Students"  style="display: none;">
+                                        @csrf
+                                    </form>
+                                    <form id="enroll-form" action="/Enrollment"  style="display: none;">
                                         @csrf
                                     </form>
                                 </div>

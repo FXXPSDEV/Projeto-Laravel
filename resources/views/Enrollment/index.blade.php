@@ -6,8 +6,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Cidades
-                    <a href="/cities/create" class="float-right btn btn-success">Nova Cidade</a>
+                    Inscrições
+                    <a href="/Enrollment/create" class="float-right btn btn-success">Nova inscrição</a>
                 </div>
 
                 <div class="card-body">
@@ -20,22 +20,22 @@
                     <table class="table">
                         <tr>
                             <th>ID</th>
-                            <th>Cidade</th>
-                            <th>Habitantes</th>
-                            <th>Estado</th>
+                            <th>Curso</th>
+                            <th>Estudante</th>
+                            <th>Autorização</th>
                             <th>Ações</th>
                         </tr>
                         
-                        @foreach($cities as $p)
+                        @foreach($Enrollment as $p)
                             <tr>
                                 <td>{{ $p->id }}</td>
-                                <td>{{ $p->name }}</td>
-                                <td>{{ $p->hab }}</td>
-                                <td>{{ $p->nameState }}</td>
+                                <td>{{ $p->course_id }}</td>
+                                <td>{{ $p->student_id }}</td>
+                                <td>{{ $p->authorized }}</td>
                                 <td>
-                                    <a href="/cities/{{ $p->id }}/edit" class="btn btn-warning">Editar</a>
+                                    <a href="/enrollment/{{ $p->id }}/edit" class="btn btn-warning">Editar</a>
 
-                                    {!! Form::open(['url' => "/cities/$p->id", 'method' => 'delete']) !!}
+                                    {!! Form::open(['url' => "/enrollment/$p->id", 'method' => 'delete']) !!}
                                         {{ Form::submit('Deletar',['class' => 'btn btn-danger']) }}
                                     {!! Form::close() !!}
                                 </td>

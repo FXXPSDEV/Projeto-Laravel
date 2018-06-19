@@ -23,6 +23,7 @@
                             <th>Curso</th>
                             <th>Ementa</th>
                             <th>Quantidade máxima</th>
+                            <th>Ações</th>
                         </tr>
                         
                         @foreach($Course as $p)
