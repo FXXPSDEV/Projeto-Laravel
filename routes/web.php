@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
 //Route::resource('Enrollment');
 //Route::resource('Course');
 //Route::resource('Student');
