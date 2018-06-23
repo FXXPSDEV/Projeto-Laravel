@@ -14,7 +14,7 @@ class Course extends Controller
     public function index()
     {
         $Course = Courses::all();
-        return view('Courses/index', ['Course' => $Course]);
+        return view('Courses/index', ['course' => $Course]);
     }
     public function create() 
     {

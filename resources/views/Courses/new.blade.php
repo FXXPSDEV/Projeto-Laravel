@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Novo Estado                  
+                    Novo Curso                  
                 </div>
 
                 <div class="card-body">
@@ -16,15 +16,15 @@
                         </div>
                     @endif
 
-                    {!! Form::open(['url' => '/states', 'method' => 'post']) !!}
-                        
-                        {{ Form::label('name', 'Nome') }}
-                        {{ Form::text('nameState') }}
+                    {!! Form::open(['url' => '/Courses', 'method' => 'post']) !!}
+                    
+                        {{ Form::label('namee', 'Nome') }}
+                        {{ Form::text('name') }}
 
                         <br /><br />
 
-                        {{ Form::label('sig', 'Sigla') }}
-                        {{ Form::text('sigla') }}
+                        {{ Form::label('sig', 'Ementa') }}
+                        {{ Form::text('ement') }}
 
                         <br/>
                         {{ Form::submit('Salvar') }}
