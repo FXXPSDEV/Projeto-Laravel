@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Courses;
 
 class Course extends Controller
@@ -14,7 +15,7 @@ class Course extends Controller
     public function index()
     {
         $Course = Courses::all();
-        return view('Courses/index', ['course' => $Course]);
+        return view('Courses/index', ['Course' => $Course]);
     }
     public function create() 
     {
@@ -23,9 +24,9 @@ class Course extends Controller
     public function store(Request $request) 
     {
         $p = new Courses;
-        $p->name = $request->input('nome');
+        $p->name = $request->input('name');
         $p->ement = $request->input('ement');
-        $p->max_student = $request->input('max_students');
+        $p->max_students = $request->input('max_students');
         
         if ($p->save()) {
             \Session::flash('status', 'Curso criado com sucesso.');
@@ -37,7 +38,7 @@ class Course extends Controller
     }
     public function edit($id) {
         $Course = Courses::findOrFail($id);
-        return view('course.edit', ['course' => $Course]);
+        return view('Courses.edit', ['Course' => $Course]);
     }
     public function delete($id) {
         $Course = Courses::findOrFail($id);
@@ -45,7 +46,9 @@ class Course extends Controller
     }
     public function update(Request $request, $id) {
         $p = Courses::findOrFail($id);
-        $p->name = $request->input('nome');
+        $p->name = $request->input('name');
+        $p->ement = $request->input('ement');
+        $p->max_students = $request->input('max_students');
         
         if ($p->save()) {
             \Session::flash('status', 'Curso atualizado com sucesso.');

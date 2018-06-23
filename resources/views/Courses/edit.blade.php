@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Editar estado                 
+                    Editar curso                 
                 </div>
 
                 <div class="card-body">
@@ -15,14 +15,20 @@
                         </div>
                     @endif
 
-                    {!! Form::open(['url' => "/states/$states->id", 'method' => 'put']) !!}
+                    {!! Form::open(['url' => "/Courses/$Course->id", 'method' => 'put']) !!}
                         
-                        {{ Form::label('name', 'Nome') }}
-                        {{ Form::text('nameState', $states->nameState) }}
+                    {{ Form::label('name', 'Nome') }}
+                        {{ Form::text('name') }}
 
-                        <br />
-                        {{ Form::label('sig', 'Sigla') }}
-                        {{ Form::text('sigla',$states->sigla) }}
+                        <br /><br />
+
+                        {{ Form::label('ement', 'Ementa') }}
+                        {{ Form::text('ement') }}
+
+                        <br /><br />
+
+                        {{ Form::label('max_students', 'Qtd. Máxima') }}
+                        {{ Form::text('max_students') }}
 
                         <br/>
                         {{ Form::submit('Salvar') }}

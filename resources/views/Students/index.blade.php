@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     Estudantes
-                    <a href="/Students/create" class="float-right btn btn-success">Nova Estudante</a>
+                    <a href="/Students/create" class="float-right btn btn-success">Novo Estudante</a>
                 </div>
 
                 <div class="card-body">

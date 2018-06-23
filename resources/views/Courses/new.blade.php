@@ -18,13 +18,18 @@
 
                     {!! Form::open(['url' => '/Courses', 'method' => 'post']) !!}
                     
-                        {{ Form::label('namee', 'Nome') }}
+                        {{ Form::label('name', 'Nome') }}
                         {{ Form::text('name') }}
 
                         <br /><br />
 
-                        {{ Form::label('sig', 'Ementa') }}
+                        {{ Form::label('ement', 'Ementa') }}
                         {{ Form::text('ement') }}
+
+                        <br /><br />
+
+                        {{ Form::label('max_students', 'Qtd. Máxima') }}
+                        {{ Form::text('max_students') }}
 
                         <br/>
                         {{ Form::submit('Salvar') }}

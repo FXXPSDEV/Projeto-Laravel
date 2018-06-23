@@ -26,7 +26,7 @@
                             <th>Ações</th>
                         </tr>
                         
-                        @foreach($course as $p)
+                        @foreach($Course as $p)
                             <tr>
                                 <td>{{ $p->id }}</td>
                                 <td>{{ $p->name }}</td>
