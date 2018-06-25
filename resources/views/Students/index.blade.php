@@ -39,9 +39,9 @@
                                 <td>{{ $p->phone }}</td>
                                 <td>{{ $p->enrollment }}</td>
                                 <td>
-                                    <a href="/student/{{ $p->id }}/edit" class="btn btn-warning">Editar</a>
+                                    <a href="/Students/{{ $p->id }}/edit" class="btn btn-warning">Editar</a>
 
-                                    {!! Form::open(['url' => "/student/$p->id", 'method' => 'delete']) !!}
+                                    {!! Form::open(['url' => "/Students/$p->id", 'method' => 'delete']) !!}
                                         {{ Form::submit('Deletar',['class' => 'btn btn-danger']) }}
                                     {!! Form::close() !!}
                                 </td>
