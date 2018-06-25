@@ -1,9 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
 use  App\Students;
 use Illuminate\Http\Request;
-
 class Student extends Controller
 {
     public function index()
@@ -17,13 +15,34 @@ class Student extends Controller
     }
     public function store(Request $request) 
     {
+
+        $rules =[
+
+            'name'=> 'required|max:60|unique:students',
+            'phone'=> '|celular_com_ddd|unique:students',
+            'adress'=> 'required|max:255',
+            'cpf'=> 'required|cpf|unique:students',
+            'rg'=> 'required|max:11|unique:students'
+
+        ];
+        $this->validate($request,$rules);
+        $errors = messages();
+
+        if ($validator->fails()) {
+           // return $validator->withErrors()->all();
+            return redirect('Students/create')
+                        ->withErrors($validator)
+                        ->withInput();
+
+        }
+
         $p = new Students;
-        $p->name = $request->input('name');
-        $p->cpf = $request->input('cpf');
-        $p->rg = $request->input('rg');
-        $p->adress = $request->input('adress');
-        $p->phone = $request->input('phone');
-        $p->enrollment = $request->input('enrollment');
+        $p->name = $request->name;
+        $p->cpf = $request->cpf;
+        $p->rg = $request->rg;
+        $p->adress = $request->adress;
+        $p->phone = $request->phone;
+        $p->enrollment = $request->enrollment;
         
         if ($p->save()) {
             \Session::flash('status', 'Estudante cadastrado com sucesso.');
@@ -64,4 +83,27 @@ class Student extends Controller
         \Session::flash('status', 'Estudante excluído com sucesso.');
         return redirect('/Students');
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Por favor, preencha seu nome',
+            'name.max'=>'Número máximo de caracteres atingido',
+            'name.unique'=>'O nome já está cadastrado em nosso sistema',
+
+            'cpf.cpf'  => 'CPF Inválido',
+            'cpf.unique'=>'O CPF já está cadastrado em nosso sistema',
+            'cpf.required'  => 'Por favor,preencha seu CPF',
+
+            'rg.max'  => 'RG Inválido',
+            'rg.unique'=>'O RG já está cadastrado em nosso sistema',
+            'rg.required'  => 'Por favor,preencha seu RG',
+
+            'phone.celular_com_ddd'=>'Número Inválido',
+            'rg.unique'=>'O RG já está cadastrado em nosso sistema',
+        ];
+    }
+
+
+
 }

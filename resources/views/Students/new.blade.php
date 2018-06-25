@@ -51,6 +51,7 @@
                         {{ Form::text('enrollment',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
 
                         </br></br>
+                        
                         {{ Form::submit('Salvar') }}
                        
                     {!! Form::close() !!}
