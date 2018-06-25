@@ -4,6 +4,8 @@ use  App\Students;
 use Illuminate\Http\Request;
 class Student extends Controller
 {
+
+    
     public function index()
     {
         $student = Students::all();
@@ -26,15 +28,14 @@ class Student extends Controller
 
         ];
         $this->validate($request,$rules);
-        $errors = messages();
-
-        if ($validator->fails()) {
+        
+       /* if ($validator->fails()) {
            // return $validator->withErrors()->all();
             return redirect('Students/create')
                         ->withErrors($validator)
                         ->withInput();
 
-        }
+        }*/
 
         $p = new Students;
         $p->name = $request->name;
@@ -62,12 +63,30 @@ class Student extends Controller
     }
     public function update(Request $request, $id) {
         $p = Students::findOrFail($id);
-        $p->name = $request->input('name');
-        $p->cpf = $request->input('cpf');
-        $p->rg = $request->input('rg');
-        $p->adress = $request->input('adress');
-        $p->phone = $request->input('phone');
-        $p->enrollment = $request->input('enrollment');
+
+        
+      $rules =[
+
+            'name'=> 'required|max:60|unique:students',
+            'phone'=> '|celular_com_ddd|unique:students',
+            'adress'=> 'required|max:255',
+            'cpf'=> 'required|cpf|unique:students',
+            'rg'=> 'required|max:11|unique:students'
+
+        ];
+
+
+        $this->validate($request,$rules);
+
+        $p->name = $request->name;
+        $p->cpf = $request->cpf;
+        $p->rg = $request->rg;
+        $p->adress = $request->adress;
+        $p->phone = $request->phone;
+        $p->enrollment = $request->enrollment;
+        
+
+       
         
         if ($p->save()) {
             \Session::flash('status', 'Estudante atualizado com sucesso.');
@@ -88,7 +107,7 @@ class Student extends Controller
     {
         return [
             'name.required' => 'Por favor, preencha seu nome',
-            'name.max'=>'Número máximo de caracteres atingido',
+            'name.max'=> 'Número máximo de caracteres atingido',
             'name.unique'=>'O nome já está cadastrado em nosso sistema',
 
             'cpf.cpf'  => 'CPF Inválido',
@@ -100,7 +119,10 @@ class Student extends Controller
             'rg.required'  => 'Por favor,preencha seu RG',
 
             'phone.celular_com_ddd'=>'Número Inválido',
-            'rg.unique'=>'O RG já está cadastrado em nosso sistema',
+            'phone.unique'=>'O telefone já está cadastrado em nosso sistema',
+
+            'adress.required'  => 'Por favor,preencha seu endereço',
+
         ];
     }
 

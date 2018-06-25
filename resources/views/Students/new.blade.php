@@ -19,31 +19,69 @@
 
             
                     {!! Form::open(['url' => '/Students', 'method' => 'post']) !!}
-                        
+                    <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}"> 
                         {{ Form::label('nameS', 'Nome', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
                         {{ Form::text('name',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
 
-                        </br></br>
-                    
+                        @if($errors->has('name'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                            @endif
 
+                        </br></br>
+                    </div>
+
+                    <div class="form-group {{ $errors->has('cpf') ? 'has-error' : '' }}"> 
                         {{ Form::label('cpfs', 'CPF', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
                         {{ Form::text('cpf',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
 
-                        </br></br>
+                        @if($errors->has('cpf'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('cpf') }}</strong>
+                        </span>
+                         @endif
+                    </div>   
 
+                        </br></br>
+                    <div class="form-group {{ $errors->has('rg') ? 'has-error' : '' }}"> 
                         {{ Form::label('rgs', 'RG', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
                         {{ Form::text('rg',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
 
+                        
+                        @if($errors->has('rg'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('rg') }}</strong>
+                        </span>
+                         @endif
+                    </div>
                          </br></br>
 
-                        
+                    <div class="form-group {{ $errors->has('adress') ? 'has-error' : '' }}">                         
                         {{ Form::label('adresss', 'Endereço', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
                         {{ Form::text('adress',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
 
+                        
+                        @if($errors->has('adress'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('adress') }}</strong>
+                        </span>
+                         @endif
+                        </div>
                         </br></br>
+                   
 
+                        <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">              
                         {{ Form::label('phonee', 'Telefone', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
                         {{ Form::text('phone',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
+
+
+                        @if($errors->has('phone'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('phone') }}</strong>
+                        </span>
+                         @endif
+                        </div>
                     
                         </br></br>
 
