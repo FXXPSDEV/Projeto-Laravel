@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function(){
 
     Route::resource('/Students','student');
+    //Route::resource('/Students','student.index');
 
 });
 Route::group(['middleware' => 'admin'], function(){
