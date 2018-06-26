@@ -24,20 +24,40 @@
 
                     {!! Form::open(['url' => "/Courses/$Course->id", 'method' => 'put']) !!}
                         
-                    {{ Form::label('name', 'Nome') }}
+                           <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}"> 
+                        {{ Form::label('namee', 'Nome') }}
                         {{ Form::text('name') }}
+                        @if($errors->has('name'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                            @endif
 
-                        <br /><br />
-
-                        {{ Form::label('ement', 'Ementa') }}
+                        </br></br>
+                    </div>
+                <div class="form-group {{ $errors->has('ement') ? 'has-error' : '' }}"> 
+                        {{ Form::label('ementt', 'Ementa') }}
                         {{ Form::text('ement') }}
+                    @if($errors->has('ement'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('ement') }}</strong>
+                                </span>
+                            @endif
 
-                        <br /><br />
+                        </br></br>
+                    </div>
+                <div class="form-group {{ $errors->has('max_students') ? 'has-error' : '' }}"> 
+                        {{ Form::label('max_studentss', 'Qtd. Máxima') }}
+                        {{ Form::number('max_students') }}
 
-                        {{ Form::label('max_students', 'Qtd. Máxima') }}
-                        {{ Form::text('max_students') }}
+                      @if($errors->has('max_students'))
+                                <span class="help-block">
+                                    <strong> {{ $errors->first('max_students') }}</strong>
+                                </span>
+                            @endif
 
-                        <br/>
+                        </br></br>
+                    </div>
                         {{ Form::submit('Salvar') }}
 
                     {!! Form::close() !!}

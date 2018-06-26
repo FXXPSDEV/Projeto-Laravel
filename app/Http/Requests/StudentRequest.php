@@ -25,7 +25,7 @@ class StudentRequest extends FormRequest
     {
         return [
             'name'=> 'required|max:60|unique:students',
-            'phone'=> '|celular_com_ddd|unique:students',
+            'phone'=> 'nullable|celular_com_ddd|unique:students',
             'adress'=> 'required|max:255',
             'cpf'=> 'required|cpf|unique:students',
             'rg'=> 'required|max:11|unique:students'
