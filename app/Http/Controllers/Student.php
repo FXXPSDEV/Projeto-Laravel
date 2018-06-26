@@ -72,28 +72,7 @@ class Student extends Controller
         return redirect('/Students');
     }
 
- /*   public function messages()
-    {
-        return [
-            'name.required' => 'Por favor, preencha seu nome',
-            'name.max'=> 'Número máximo de caracteres atingido',
-            'name.unique'=>'O nome já está cadastrado em nosso sistema',
-
-            'cpf.cpf'  => 'CPF Inválido',
-            'cpf.unique'=>'O CPF já está cadastrado em nosso sistema',
-            'cpf.required'  => 'Por favor,preencha seu CPF',
-
-            'rg.max'  => 'RG Inválido',
-            'rg.unique'=>'O RG já está cadastrado em nosso sistema',
-            'rg.required'  => 'Por favor,preencha seu RG',
-
-            'phone.celular_com_ddd'=>'Número Inválido',
-            'phone.unique'=>'O telefone já está cadastrado em nosso sistema',
-
-            'adress.required'  => 'Por favor,preencha seu endereço',
-
-        ];
-    }*/
+ 
 
 
 
