@@ -18,12 +18,24 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'AdminController@admin')    
-    ->middleware('is_admin')    
-    ->name('admin');
 
-Route::resource('/Courses', 'Course');
-Route::resource('/Students','student');
-Route::resource('/Enrollment','enrollment');
+Route::group(['middleware' => 'auth'], function(){
 
-//
+    Route::resource('/Students','student');
+
+});
+Route::group(['middleware' => 'admin'], function(){
+
+    Route::resource('/Courses', 'Course');
+    Route::resource('/Enrollment','enrollment');
+
+});
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
