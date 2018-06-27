@@ -1,13 +1,17 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    Inscrições
-                    <a href="/Enrollment/create" class="float-right btn btn-success">Nova inscrição</a>
+                <div class="card-header float-right">
+                    Navegação
+                </br>
+                    <a href="/auth/register" class="float-right btn btn-success">Nova Matricula</a>
+                
+                    <a href="/Courses/create" class="float-right btn btn-success">Novo Curso</a>
                 </div>
 
                 <div class="card-body">
@@ -26,18 +30,18 @@
                             <th>Ações</th>
                         </tr>
                         
-                        @foreach($Enrollment as $p)
+                        @foreach($enrollment as $p)
                             <tr>
                                 <td>{{ $p->id }}</td>
                                 <td>{{ $p->course_id }}</td>
                                 <td>{{ $p->student_id }}</td>
                                 <td>{{ $p->authorized }}</td>
                                 <td>
-                                    <a href="/enrollment/{{ $p->id }}/edit" class="btn btn-warning">Editar</a>
+                                    <a href="/enrollment/{{ $p->id }}/edit" class="btn btn-warning">Autorizar</a>
 
-                                    {!! Form::open(['url' => "/enrollment/$p->id", 'method' => 'delete']) !!}
+                                  <!--  {!! Form::open(['url' => "/enrollment/$p->id", 'method' => 'delete']) !!}
                                         {{ Form::submit('Deletar',['class' => 'btn btn-danger']) }}
-                                    {!! Form::close() !!}
+                                    {!! Form::close() !!}-->
                                 </td>
                             </tr>
                         @endforeach

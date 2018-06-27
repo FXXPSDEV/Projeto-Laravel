@@ -114,13 +114,13 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
+        
             'text'        => 'Cursos',
             'url'         => 'Courses',
             'icon'        => 'book',
             //'label'       => 4,
             'label_color' => 'success',
-            'can' => 'admin-can-view-courses',
+      //      'can' => 'admin-can-view-courses',
             
         ],
         [
@@ -187,7 +187,7 @@ return [
             ],
         ],
         
-    ],
+
 
     /*
     |--------------------------------------------------------------------------
