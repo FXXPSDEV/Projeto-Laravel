@@ -67,11 +67,17 @@ class Enrollment extends Controller
             \Session::flash('status', 'Ocorreu um erro ao atualizar o estudante.');
             return view('Enrollment.edit', ['enrollment' => $p]);
         }
-    }
+    }*/
     public function destroy($id) {
         $p = Enrollment::findOrFail($id);
         $p->delete();
         \Session::flash('status', 'Estudante excluído com sucesso.');
         return redirect('/Enrollment');
-    }*/
+    }
+    
+    public function authorize($id){
+
+        \Session::flash('status', 'Estudante autorizado com sucesso.');
+        return redirect('/Enrollment');
+    }
 }

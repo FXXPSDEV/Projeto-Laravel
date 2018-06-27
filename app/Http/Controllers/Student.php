@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StudentRequest;
 class Student extends Controller
 {
-
+// So pra salvar, precisa passar o curso e tal, isso ja pra dentro da enrollment por aqui, faltando authorized tambem
     
     public function index()
     {
@@ -75,5 +75,5 @@ class Student extends Controller
  
 
 
-
+// So pra salvar, precisa passar o curso e tal, isso ja pra dentro da enrollment por aqui, faltando authorized tambem
 }
