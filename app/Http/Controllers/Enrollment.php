@@ -18,7 +18,7 @@ class Enrollment extends Controller
         $enrollment = DB::table('enrollment')
         ->join('enrollment', 'enrollment.course_id', '=', 'courses.id')
         ->join('enrollment','enrollment.student_id','=','students.id')
-        ->select('students.id','students.name' ,'students.enrollment', 'courses.id','courses.name')
+        ->select('students.id','students.name' ,'students.enrollment', 'courses.id','courses.name','course.max_students')
         ->get();
         return view('Enrollment/index', ['enrollment' => $enrollment]);
 

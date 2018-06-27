@@ -16,7 +16,6 @@ class IsAdmin
     {
         if(Auth::user()->type == 'admin') {
             return $next($request);
-            
         }
         return redirect('/home');
     }

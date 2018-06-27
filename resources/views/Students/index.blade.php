@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Estudantes</h1>
 @stop
 
 @section('content')
@@ -12,7 +12,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Estudantes
+                    
                     <a href="/Students/create" class="float-right btn btn-success">Novo Estudante</a>
                 </div>
 

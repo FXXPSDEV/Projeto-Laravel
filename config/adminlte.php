@@ -120,6 +120,7 @@ return [
             'icon'        => 'book',
             //'label'       => 4,
             'label_color' => 'success',
+            'can' => 'admin-can-view-courses',
             
         ],
         [
