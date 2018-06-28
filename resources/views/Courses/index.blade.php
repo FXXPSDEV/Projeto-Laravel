@@ -12,8 +12,14 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
+<<<<<<< HEAD
                     
+=======
+                    Curso
+                    @if(Auth::user()->type == "admin")
+>>>>>>> 10a4502802f68ac84ccf92c125b0eade11aa3988
                     <a href="/Courses/create" class="float-right btn btn-success">Novo Curso</a>
+                    @endif
                 </div>
 
                 <div class="card-body">
@@ -29,7 +35,9 @@
                             <th>Curso</th>
                             <th>Ementa</th>
                             <th>Quantidade máxima</th>
+                            @if(Auth::user()->type == "admin")
                             <th>Ações</th>
+                            @endif
                         </tr>
                         
                         @foreach($Course as $p)
