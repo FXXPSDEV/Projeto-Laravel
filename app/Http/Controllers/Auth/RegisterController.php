@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Http\Requests\StudentRequest;
 
 
+
 class RegisterController extends Controller
 {
 
@@ -68,6 +69,7 @@ class RegisterController extends Controller
             'cpf' => $data['cpf'],
             'rg' => $data['rg'],
             'phone' => $data['phone'],
+            'adress' => $data['adress'],
             
         ]);
     }

@@ -4,21 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Students;
+use App\User;
 use App\Courses;
 
 class Enrollment extends Controller
 {
     public function index()
     {
-
-        $teste = DB::table('enrollments')
-        ->get();
-
         $enrollment = DB::table('enrollments')
         ->join('courses', 'enrollments.course_id', '=', 'courses.id')
-        ->join('students','enrollments.student_id','=','students.id')
-        ->select('students.id','students.name' ,'students.enrollment', 'courses.id','courses.name','courses.max_students')
+        ->join('users','enrollments.student_id','=','users.id')
+        ->select('users.id','users.name' ,'users.enrollment', 'courses.id','courses.name','courses.max_users')
         ->get();
 
         //return view('Enrollment/index');
@@ -75,9 +71,9 @@ class Enrollment extends Controller
         return redirect('/Enrollment');
     }
     
-    public function authorize($id){
+    /*public function authorize($id){
 
         \Session::flash('status', 'Estudante autorizado com sucesso.');
         return redirect('/Enrollment');
-    }
+    }*/
 }
