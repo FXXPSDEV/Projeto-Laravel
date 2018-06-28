@@ -19,11 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('type')->default('default');
+            $table->string('authorized')->default('Não');
             $table->string('cpf')->unique();
             $table->string('rg')->unique();
-            $table->string('enrollment')->unique();
-            $table->string('phone')->unique();
-            $table->string('adress')->unique();
+            $table->string('phone');
+            $table->string('adress');
             $table->rememberToken();
             $table->timestamps();
 

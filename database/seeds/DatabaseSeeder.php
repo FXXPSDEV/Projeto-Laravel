@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             'cpf' => '123456789',
             'rg' => '987654321',
             'phone' => '456789132',
+            'adress' => 'root',
+            
         ]);
     }
 }

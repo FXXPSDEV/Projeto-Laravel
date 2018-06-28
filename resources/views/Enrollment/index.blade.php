@@ -6,12 +6,14 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
+
+                @section('content_header')
+                    <h1>Controle de Matriculas</h1>
+                @stop
                 <div class="card-header float-right">
-                    Navegação
-                </br>
-                    <a href="/auth/register" class="float-right btn btn-success">Nova Matricula</a>
-                
-                    <a href="/Courses/create" class="float-right btn btn-success">Novo Curso</a>
+         
+                </br>                
+                 
                 </div>
 
                 <div class="card-body">

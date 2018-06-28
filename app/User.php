@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'type', 'cpf', 'rg', 'phone',
+        'name', 'email', 'password', 'type', 'cpf', 'rg', 'phone','adress'
     ];
 
     /**
@@ -29,6 +29,8 @@ class User extends Authenticatable
 
     const ADMIN_TYPE = 'admin';
     const DEFAULT_TYPE = 'default';
+    const AUTHORIZED = 'Não';
+    
     public function isAdmin()    {        
         return $this->type === self::ADMIN_TYPE;    
     }

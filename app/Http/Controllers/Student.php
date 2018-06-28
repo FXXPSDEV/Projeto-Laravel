@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use  App\Students;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\StudentRequest;
 class Student extends Controller
@@ -9,7 +10,7 @@ class Student extends Controller
     
     public function index()
     {
-        $student = Students::all();
+        $student = User::all();
         return view('Students/index', ['student' => $student]);
     }
     public function create() 
@@ -19,13 +20,13 @@ class Student extends Controller
     public function store(StudentRequest $request) 
     {
 
-        $p = new Students;
+        $p = new User;
         $p->name = $request->name;
         $p->cpf = $request->cpf;
         $p->rg = $request->rg;
-        $p->adress = $request->adress;
+        //$p->adress = $request->adress;
         $p->phone = $request->phone;
-        $p->enrollment = $request->enrollment;
+        //$p->enrollment = $request->enrollment;
         
         if ($p->save()) {
             \Session::flash('status', 'Estudante cadastrado com sucesso.');

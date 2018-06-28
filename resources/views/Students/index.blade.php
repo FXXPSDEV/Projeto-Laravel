@@ -11,10 +11,6 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    
-                    <a href="/Students/create" class="float-right btn btn-success">Novo Estudante</a>
-                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -29,10 +25,12 @@
                             <th>Nome</th>
                             <th>CPF</th>
                             <th>RG</th>
-                            <th>Endereço</th>
+                            <th>Permissão</th>
                             <th>Telefone</th>
                             <th>Inscrição</th>
+                            @if(Auth::user()->type == "admin")
                             <th>Ações</th>
+                            @endif
                         </tr>
                         
                         @foreach($student as $p)
@@ -41,9 +39,10 @@
                                 <td>{{ $p->name }}</td>
                                 <td>{{ $p->cpf }}</td>
                                 <td>{{ $p->rg }}</td>
-                                <td>{{ $p->adress }}</td>
+                                <td>{{ $p->type }}</td>
                                 <td>{{ $p->phone }}</td>
-                                <td>{{ $p->enrollment }}</td>
+                                <td>{{ $p->name }}</td>
+                                @if(Auth::user()->type == "admin")
                                 <td>
                                     <a href="/Students/{{ $p->id }}/edit" class="btn btn-warning">Editar</a>
 
@@ -51,6 +50,7 @@
                                         {{ Form::submit('Deletar',['class' => 'btn btn-danger']) }}
                                     {!! Form::close() !!}
                                 </td>
+                                @endif
                             </tr>
                         @endforeach
                     </table>

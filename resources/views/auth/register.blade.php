@@ -15,7 +15,7 @@
                 {!! csrf_field() !!}
 
                 <div class="form-group has-feedback {{ $errors->has('name') ? 'has-error' : '' }}">
-                    <input type="text" name="name" class="form-control" value="{{ old('name') }}"
+                    <input type="text" name="name" class="form-control" value="{{ old('name')  }}"
                            placeholder="{{ trans('Nome') }}">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     @if ($errors->has('name'))
@@ -76,16 +76,19 @@
                         </span>
                     @endif
                 </div>
+
                 <div class="form-group has-feedback {{ $errors->has('phone') ? 'has-error' : '' }}">
-                    <input type="text" name="phone_with_ddd" id="phone_with_ddd" class="form-control phone" value="{{ old('phone') }}"
-                           placeholder="{{ trans('Telefone') }}">
-                    
-                    @if ($errors->has('phone'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('phone') }}</strong>
-                        </span>
-                    @endif
-                </div>
+                        <input type="text" name="phone" class="form-control" value="{{ old('phone') }}"
+                               placeholder="{{ trans('phone') }}">
+                        
+                        @if ($errors->has('phone'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('phone') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
+
                 <div class="form-group has-feedback {{ $errors->has('adress') ? 'has-error' : '' }}">
                         <input type="text" name="adress" id="adress" class="form-control adress" value="{{ old('adress') }}"
                                placeholder="{{ trans('Endereço') }}">
@@ -97,7 +100,7 @@
                         @endif
                     </div>
     
-
+                    
                <!--
 						<form method="get" action=".">
 							<div class="form-group">

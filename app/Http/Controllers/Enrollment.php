@@ -14,7 +14,7 @@ class Enrollment extends Controller
         $enrollment = DB::table('enrollments')
         ->join('courses', 'enrollments.course_id', '=', 'courses.id')
         ->join('users','enrollments.student_id','=','users.id')
-        ->select('users.id','users.name' ,'users.enrollment', 'courses.id','courses.name','courses.max_users')
+        ->select('users.id','users.name' ,'courses.id','courses.name','courses.max_students')
         ->get();
 
         //return view('Enrollment/index');
@@ -71,7 +71,9 @@ class Enrollment extends Controller
         return redirect('/Enrollment');
     }
     
-    /*public function authorize($id){
+ /*   public function authorize($id){
+
+        //exemplo $p->authorize = true;
 
         \Session::flash('status', 'Estudante autorizado com sucesso.');
         return redirect('/Enrollment');
