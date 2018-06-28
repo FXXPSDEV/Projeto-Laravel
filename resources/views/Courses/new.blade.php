@@ -48,7 +48,7 @@
                     </div>
                 <div class="form-group {{ $errors->has('max_students') ? 'has-error' : '' }}"> 
                          {{ Form::label('max', 'Qtd. Estudantes', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
-                        {{ Form::text('max_studnets',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
+                        {{ Form::text('max_students',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
 
                       @if($errors->has('max_students'))
                                 <span class="help-block">

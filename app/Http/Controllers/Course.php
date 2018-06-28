@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CourseRequest;
 use Illuminate\Support\Facades\Validator;
 use App\Courses;
+use App\User;
+use Auth;
 
 class Course extends Controller
 {

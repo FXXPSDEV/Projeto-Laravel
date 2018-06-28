@@ -38,7 +38,7 @@
                                 <td>{{ $p->name }}</td>
                                 <td>{{ $p->ement }}</td>
                                 <td>{{ $p->max_students }}</td>
-
+                        @if(Auth::user()->type == 'admin')
                                 <td>
                                     <a href="/Courses/{{ $p->id }}/edit" class="btn btn-warning">Editar</a>
 
@@ -46,6 +46,7 @@
                                         {{ Form::submit('Deletar',['class' => 'btn btn-danger']) }}
                                     {!! Form::close() !!}
                                 </td>
+                        @endif
                             </tr>
                         @endforeach
                     </table>

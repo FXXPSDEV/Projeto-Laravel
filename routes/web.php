@@ -22,11 +22,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function(){
 
     Route::resource('/Students','Student');
+    Route::resource('/Courses', 'Course');
 
 });
 Route::group(['middleware' => 'admin'], function(){
 
-    Route::resource('/Courses', 'Course');
+    Route::resource('/Courses/edit', 'Course');
     Route::resource('/Enrollment','enrollment');
 
 });
