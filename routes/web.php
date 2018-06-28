@@ -22,13 +22,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function(){
 
     Route::resource('/Students','Student');
-    Route::resource('/Courses', 'Course');
+    Route::get('/Courses', 'Course@index')->name('Courses');
 
 });
 Route::group(['middleware' => 'admin'], function(){
 
-    Route::resource('/Courses/edit', 'Course');
-    Route::resource('/Enrollment','enrollment');
+    Route::post('/Courses', 'Course@store');
+    Route::get('/Courses/{Course}/edit', 'Course@edit');
+    Route::delete('/Courses/{Course}', 'Course@destroy');
+    Route::get('/Courses/create', 'Course@create');
+    Route::put('/Courses/{Course}', 'Course@update');
+    Route::get('/Courses/{Course}', 'Course@show');
+    //Route::resource('/Enrollment','enrollment');
 
 });
 
