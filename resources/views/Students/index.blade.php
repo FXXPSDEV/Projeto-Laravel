@@ -71,6 +71,10 @@
                         @endforeach
                     </table>
                 </div>
+
+            </div>
+            <div class="text-center">
+                    {{ $student->links() }}
             </div>
         </div>
     </div>

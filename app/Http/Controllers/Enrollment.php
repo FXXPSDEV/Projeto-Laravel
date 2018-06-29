@@ -13,11 +13,16 @@ class Enrollment extends Controller
 {
     public function index()
     {
-        $enrollments = Enrollments::all();
+        $enrollments = Enrollments::paginate(2);
         $users = User::all();
-        $courses = Courses::all();
-        //dd($enrollments, $users, $courses);
-        return view('Enrollment/index', compact('enrollments', 'users', 'courses'));
+        $courses = Courses::all();   
+        
+          /*  $users = DB::table('users')->paginate(15);
+        $courses = DB::table('courses')->paginate(15);
+        $enrollments = DB::table('enrollments')->paginate(15);
+        //dd($enrollments, $users, $courses);*/
+       
+        return view('Enrollment/index', compact('enrollments', 'users', 'courses','teste'));
     }
 
     public function create() 

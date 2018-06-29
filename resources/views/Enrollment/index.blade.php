@@ -68,6 +68,10 @@
                 </div>
             </div>
         </div>
+        <div class="text-center">
+                {{ $enrollments->links() }}
+
+        </div>
     </div>
 </div>
 @endsection

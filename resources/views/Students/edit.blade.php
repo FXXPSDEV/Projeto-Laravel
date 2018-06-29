@@ -1,19 +1,25 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
-
-@section('content_header')
-    <h1> Editar Estudante </h1>
-@stop
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                   
+        <div class="col-md-11">
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
                 </div>
+            @endif
+            <div class="card box box-primary">
+
+                @section('content_header')
+                    <div class="row">
+                
+                        <div class="col-md-4">
+                            <h4>Editar Estudante</h4> 
+                        </div>
+                    </div>                      
+                @stop
 
                 <div class="card-body">
                     @if (session('status'))

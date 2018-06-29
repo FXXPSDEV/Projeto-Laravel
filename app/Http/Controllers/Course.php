@@ -17,7 +17,7 @@ class Course extends Controller
     }
     public function index()
     {
-        $courses = Courses::all();
+        $courses = Courses::paginate(4);
         //dd($courses);
         return view('Courses/index', compact('courses'));
     }
@@ -42,6 +42,7 @@ class Course extends Controller
     }
     public function edit($id) {
         $Course = Courses::findOrFail($id);
+        
         return view('Courses.edit', ['Course' => $Course]);
     }
     public function delete($id) {

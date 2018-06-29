@@ -1,16 +1,25 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
-
-@section('content_header')
-    <h1>Novo Curso</h1>
-@stop
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
+        <div class="col-md-11">
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
+            <div class="card box box-primary">
+
+                @section('content_header')
+                    <div class="row">
+                
+                        <div class="col-md-4">
+                            <h4>Novo Curso</h4> 
+                        </div>
+                    </div>                      
+                @stop
                 <div class="card-header">
                 </div>
 
@@ -22,7 +31,7 @@
                     @endif
 
                     {!! Form::open(['url' => '/Courses', 'method' => 'post']) !!}
-
+                        <br>  <br>
                      <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}"> 
                          {{ Form::label('namess', 'Nome', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
                         {{ Form::text('name',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}

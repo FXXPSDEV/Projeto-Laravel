@@ -51,6 +51,7 @@
                                 <td>{{ $p->name }}</td>
                                 <td>{{ $p->ement }}</td>
                                 <td>{{ $p->max_students }}</td>
+                                
                         @if(Auth::user()->type == 'admin')
                                 <td>
                                 <div class="row">
@@ -70,12 +71,22 @@
                             </tr>
                         @endforeach
                     </table>
+                    
                 </div>
+               
             </div>
+           
+            <div class="text-center">
+                    {{ $courses->links() }}
+                    </div>
         </div>
+        
     </div>
+   
 </div>
+        
 @stop
+
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
