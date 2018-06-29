@@ -15,9 +15,9 @@ class Enrollment extends Migration
     {
         Schema::create('enrollments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('course_id')->references('id')->on('course')->onDelete('cascade');
-            $table->string('student_id')->references('id')->on('user')->onDelete('cascade');
-            $table->boolean('authorized');
+            $table->string('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->string('student_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('authorized');
             $table->timestamps();
         });
     }

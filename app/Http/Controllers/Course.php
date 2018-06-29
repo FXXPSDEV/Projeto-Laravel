@@ -17,12 +17,13 @@ class Course extends Controller
     }
     public function index()
     {
-        $Course = Courses::all();
-        return view('Courses/index', ['Course' => $Course]);
+        $courses = Courses::all();
+        //dd($courses);
+        return view('Courses/index', compact('courses'));
     }
     public function create() 
     {
-        return view('Courses/new');
+        return view('Courses/create');
     }
     public function store(CourseRequest $request) 
     {

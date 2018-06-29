@@ -37,37 +37,32 @@ class Student extends Controller
         }
     }
     public function edit($id) {
-        $students = Students::findOrFail($id);
+        $students = User::findOrFail($id);
         return view('Students.edit', ['students' => $students]);
     }
     public function delete($id) {
-        $students = Students::findOrFail($id);
+        $students = User::findOrFail($id);
         return view('Students.delete', ['students' => $students]); 
     }
-    public function update(StudentRequest $request, $id) {
-        $p = Students::findOrFail($id);
-
-
-        $p->name = $request->name;
-        $p->cpf = $request->cpf;
-        $p->rg = $request->rg;
-        $p->adress = $request->adress;
-        $p->phone = $request->phone;
-        $p->enrollment = $request->enrollment;
+    public function update(Request $request, $id) {
+        $p = User::findOrFail($id);
+        if($p->type == 'admin'){
+            $p->type = User::DEFAULT_TYPE;
+        }else{
+            $p->type = User::ADMIN_TYPE;
+        }
         
-
-       
         
         if ($p->save()) {
-            \Session::flash('status', 'Estudante atualizado com sucesso.');
+            \Session::flash('status', 'Permissão alterada.');
             return redirect('/Students');
         } else {
-            \Session::flash('status', 'Ocorreu um erro ao atualizar o estudante.');
-            return view('Students.edit', ['Students' => $p]);
+            \Session::flash('status', 'Ocorreu um erro ao atualizar o matricula.');
+            return view('Student.edit', ['enrollment' => $p]);
         }
     }
     public function destroy($id) {
-        $p = Students::findOrFail($id);
+        $p = User::findOrFail($id);
         $p->delete();
         \Session::flash('status', 'Estudante excluído com sucesso.');
         return redirect('/Students');

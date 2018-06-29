@@ -29,7 +29,8 @@ class User extends Authenticatable
 
     const ADMIN_TYPE = 'admin';
     const DEFAULT_TYPE = 'default';
-    const AUTHORIZED = 'Não';
+    const AUTHORIZED = 'Desativado';
+    const AUTHORIZEDED = 'Ativado';
     
     public function isAdmin()    {        
         return $this->type === self::ADMIN_TYPE;    

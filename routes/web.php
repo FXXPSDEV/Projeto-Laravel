@@ -23,6 +23,9 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/Students','Student@index')->name('Students');
     Route::get('/Courses', 'Course@index')->name('Courses');
+    Route::get('/Enrollment', 'Enrollment@index')->name('Enrollments');
+    Route::get('/Enrollment/create', 'Enrollment@create');
+    Route::post('/Enrollment', 'Enrollment@store');
 
 });
 Route::group(['middleware' => 'admin'], function(){
@@ -42,7 +45,12 @@ Route::group(['middleware' => 'admin'], function(){
     Route::put('/Students/{Student}', 'Student@update');
     Route::get('/Students/{Student}', 'Student@show');
     //
-    Route::resource('/Enrollment','enrollment');
+    
+    Route::get('/Enrollment/{Enrollments}/edit', 'Enrollment@edit');
+    Route::delete('/Enrollment/{Enrollments}', 'Enrollment@destroy');
+    
+    Route::put('/Enrollment/{Enrollments}', 'Enrollment@update');
+    Route::get('/Enrollment/{Enrollments}', 'Enrollment@show');
 
 });
 

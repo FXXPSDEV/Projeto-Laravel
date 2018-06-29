@@ -17,7 +17,7 @@
                 <div class="form-group has-feedback {{ $errors->has('name') ? 'has-error' : '' }}">
                     <input type="text" name="name" class="form-control" value="{{ old('name')  }}"
                            placeholder="{{ trans('Nome') }}">
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    
                     @if ($errors->has('name'))
                         <span class="help-block">
                             <strong>{{ $errors->first('name') }}</strong>
@@ -27,7 +27,7 @@
                 <div class="form-group has-feedback {{ $errors->has('email') ? 'has-error' : '' }}">
                     <input type="email" name="email" class="form-control" value="{{ old('email') }}"
                            placeholder="{{ trans('adminlte::adminlte.email') }}">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    
                     @if ($errors->has('email'))
                         <span class="help-block">
                             <strong>{{ $errors->first('email') }}</strong>
@@ -37,7 +37,7 @@
                 <div class="form-group has-feedback {{ $errors->has('password') ? 'has-error' : '' }}">
                     <input type="password" name="password" class="form-control"
                            placeholder="{{ trans('Senha') }}">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    
                     @if ($errors->has('password'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password') }}</strong>
@@ -47,7 +47,7 @@
                 <div class="form-group has-feedback {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
                     <input type="password" name="password_confirmation" class="form-control"
                            placeholder="{{ trans('Confirme sua senha') }}">
-                    <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                    
                     @if ($errors->has('password_confirmation'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password_confirmation') }}</strong>
@@ -78,8 +78,8 @@
                 </div>
 
                 <div class="form-group has-feedback {{ $errors->has('phone') ? 'has-error' : '' }}">
-                        <input type="text" name="phone" class="form-control" value="{{ old('phone') }}"
-                               placeholder="{{ trans('phone') }}">
+                        <input type="text" id="phone" name="phone" class="form-control" value="{{ old('phone') }}"
+                               placeholder="{{ trans('Telefone') }}">
                         
                         @if ($errors->has('phone'))
                             <span class="help-block">
@@ -155,49 +155,11 @@
 @stop
 
 
-@section('page-script')
-<script type="text/javascript">
-	$(document).ready(() => {
-    $('.date').mask('00/00/0000');
-    $('.time').mask('00:00:00');
-    $('.date_time').mask('00/00/0000 00:00:00');
-    $('.cep').mask('00000-000');
-    $('.phone').mask('0000-0000');
-    $('.phone_with_ddd').mask('(00) 0000-0000');
-    $('.phone_us').mask('(000) 000-0000');
-    $('.mixed').mask('AAA 000-S0S');
-    $('.cpf').mask('000.000.000-00', { reverse: true });
-    $('.cnpj').mask('00.000.000/0000-00', { reverse: true });
-    $('.money').mask('000.000.000.000.000,00', { reverse: true });
-    $('.money2').mask("#.##0,00", { reverse: true });
-    $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
-        translation: {
-            Z: {
-                pattern: /[0-9]/, optional: true
-            }
-        }
-    });
-    $('.ip_address').mask('099.099.099.099');
-    $('.percent').mask('##0,00%', { reverse: true });
-    $('.clear-if-not-match').mask("00/00/0000", { clearIfNotMatch: true });
-    $('.placeholder').mask("00/00/0000", {
-        translation: {
-            placeholder: "__/__/____"
-        }
-    });
-    $('.placeholder2').mask("00/00/0000", {
-        placeholder: "__/__/____"
-    });
-    $('.fallback').mask("00r00r0000", {
-        translation: {
-            r: {
-                pattern: /[\/]/,
-                fallback: '/'
-            },
-            placeholder: "__/__/____"
-        }
-    });
-    $('.selectonfocus').mask("00/00/0000", { selectOnFocus: true });
-});
-</script>
+@section('adminlte_js')  
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#cpf').mask('000.000.000-00', {reverse: true});
+            $('#phone').mask('(00) 0000-0000');
+        });  
+    </script>
 @stop
