@@ -13,7 +13,7 @@ class Enrollment extends Controller
 {
     public function index()
     {
-        $enrollments = Enrollments::paginate(2);
+        $enrollments = Enrollments::paginate(15);
         $users = User::all();
         $courses = Courses::all();   
         
