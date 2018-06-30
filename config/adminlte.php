@@ -137,6 +137,13 @@ return [
             //'label'       => ,
             'label_color' => 'success',
         ],
+        'MENU PERFIL',
+        [
+           
+            'text' => 'Editar',
+            'url'  => 'Students/edit',
+            'icon' => 'user',
+        ],
         
     ],
 

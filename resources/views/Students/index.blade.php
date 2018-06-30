@@ -36,7 +36,7 @@
                             <th>RG</th>
                             <th>Permissão</th>
                             <th>Telefone</th>
-                            <th>Inscrição</th>
+                           
                             @if(Auth::user()->type == "admin")
                             <th>Ações</th>
                             @endif
@@ -50,12 +50,12 @@
                                 <td>{{ $p->rg }}</td>
                                 <td>{{ $p->type }}</td>
                                 <td>{{ $p->phone }}</td>
-                                <td>{{ $p->name }}</td>
+                                
                                 @if(Auth::user()->type == "admin")
                                 <td>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                    {!! Form::open(['url' => "/Students/$p->id", 'method' => 'put']) !!}
+                                    {!! Form::open(['url' => "/Students/$p->id", 'method' => 'patch']) !!}
                                         {{ Form::submit('Admin',['class' => 'btn btn-sm btn-warning']) }}
                                     {!! Form::close() !!}
                                     </div>
