@@ -105,31 +105,8 @@
                     
                         </br></br>
 
-                        <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}"> 
-                            {{ Form::label('pass', 'Senha', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
-                            {{ Form::password('password',Auth::user()->password,['class' => 'col-sm-8 col-form-label col-form-label-sm']) }}
-    
-                            @if($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-    
-                            </br></br>
-                        </div>
-    
-                        <div class="form-group {{ $errors->has('password_confirmation') ? 'has-error' : '' }}"> 
-                            {{ Form::label('passowrdconf', 'Confirmação de senha', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
-                            {{ Form::password('password_confirmation',Auth::user()->password_confirmation,['class' => 'col-sm-8 col-form-label col-form-label-sm']) }}
-    
-                            @if($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-    
-                            </br></br>
-                        </div
+                     
+                       
 
 
                         <div class="text-center">
