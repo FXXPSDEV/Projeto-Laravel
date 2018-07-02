@@ -54,7 +54,7 @@
 
                     <div class="form-group {{ $errors->has('cpf') ? 'has-error' : '' }}"> 
                         {{ Form::label('cpfs', 'CPF', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
-                        {{ Form::text('cpf',Auth::user()->cpf,['class' => 'col-sm-8 col-form-label col-form-label-sm']) }}
+                        {{ Form::text('cpf',Auth::user()->cpf,['class' => 'col-sm-8 col-form-label col-form-label-sm','id' => 'cpf']) }}
 
                         @if($errors->has('cpf'))
                         <span class="help-block">
@@ -93,7 +93,7 @@
 
                         <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">              
                         {{ Form::label('phonee', 'Telefone', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
-                        {{ Form::text('phone',Auth::user()->phone,['class' => 'col-sm-8 col-form-label col-form-label-sm']) }}
+                        {{ Form::text('phone',Auth::user()->phone,['class' => 'col-sm-8 col-form-label col-form-label-sm','id' => 'phone']) }}
 
 
                         @if($errors->has('phone'))
