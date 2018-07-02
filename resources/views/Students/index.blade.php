@@ -4,7 +4,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-11">
+        <div class="col-md-12">
             @if (session('status'))
                 <div class="alert alert-success">
                     {{ session('status') }}
@@ -54,12 +54,13 @@
                                 @if(Auth::user()->type == "admin")
                                 <td>
                                 <div class="row">
-                                    <div class="col-sm-3">
+                                    <div class="col-md-6">
                                     {!! Form::open(['url' => "/Students/$p->id", 'method' => 'patch']) !!}
                                         {{ Form::submit('Admin',['class' => 'btn btn-sm btn-warning']) }}
                                     {!! Form::close() !!}
                                     </div>
-                                    <div class="col-md-3">
+                                    <br><br>
+                                    <div class="col-md-6">
                                     {!! Form::open(['url' => "/Students/$p->id", 'method' => 'delete']) !!}
                                         {{ Form::submit('Deletar',['class' => 'btn btn-sm btn-danger']) }}
                                     {!! Form::close() !!}

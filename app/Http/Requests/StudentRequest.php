@@ -24,11 +24,11 @@ class StudentRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'required|max:60|unique:students',
-            'phone'=> 'nullable|celular_com_ddd|unique:students',
+            'name'=> 'required|max:60|unique:users',
+            'phone'=> 'nullable|celular_com_ddd|unique:users',
             'adress'=> 'required|max:255',
-            'cpf'=> 'required|cpf|unique:students',
-            'rg'=> 'required|max:11|unique:students'
+            'cpf'=> 'required|cpf|unique:users',
+            'rg'=> 'required|unique:users'
 
             
         ];

@@ -34,7 +34,7 @@
                         <br>  <br>
                      <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}"> 
                          {{ Form::label('namess', 'Nome', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
-                        {{ Form::text('name',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
+                        {{ Form::text('name',null,['class' => 'col-sm-9 col-form-label col-form-label-sm']) }}
                         @if($errors->has('name'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('name') }}</strong>
@@ -45,7 +45,7 @@
                     </div>
                 <div class="form-group {{ $errors->has('ement') ? 'has-error' : '' }}"> 
                          {{ Form::label('emetsss', 'Ementa', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
-                        {{ Form::text('ement',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
+                        {{ Form::text('ement',null,['class' => 'col-sm-9 col-form-label col-form-label-sm']) }}
                     @if($errors->has('ement'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('ement') }}</strong>
@@ -56,7 +56,7 @@
                     </div>
                 <div class="form-group {{ $errors->has('max_students') ? 'has-error' : '' }}"> 
                          {{ Form::label('max', 'Qtd. Estudantes', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
-                        {{ Form::text('max_students',null,['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
+                        {{ Form::text('max_students',null,['class' => 'col-sm-9 col-form-label col-form-label-sm']) }}
 
                       @if($errors->has('max_students'))
                                 <span class="help-block">
@@ -67,9 +67,13 @@
                         </br></br>
                     </div>
 
-                        {{ Form::submit('Salvar') }}
-
+                    <div class="text-center">
+                        {{ Form::submit('Salvar',['class' => 'btn btn-success']) }}
+                        
+                     </div>
+                   
                     {!! Form::close() !!}
+                     <br>
                 </div>
             </div>
         </div>

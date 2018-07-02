@@ -1,8 +1,7 @@
 <?php
-
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-//use Vendor\fzaninotto\faker\Provider\pt_BR\Person;
+
 
 class DatabaseSeeder extends Seeder
 {

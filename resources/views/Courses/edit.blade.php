@@ -69,9 +69,15 @@
 
                        </br></br>
                    </div>
-                        {{ Form::submit('Salvar') }}
+                   <div class="text-center">
+                    {{ Form::submit('Salvar',['class' => 'btn btn-success']) }}
+                    
+                 </div>
+               
+                 {!! Form::close() !!}
+                 <br>
 
-                    {!! Form::close() !!}
+                 
                 </div>
             </div>
         </div>
