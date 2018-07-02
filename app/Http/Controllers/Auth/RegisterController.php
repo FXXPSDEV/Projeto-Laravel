@@ -61,12 +61,15 @@ class RegisterController extends Controller
             'rg.unique'=>'O RG já está cadastrado em nosso sistema',
             'rg.required'  => 'Por favor,preencha seu RG',
 
-            'phone.celular_com_ddd'=>'Número Inválido',
+          
             'phone.unique'=>'O telefone já está cadastrado em nosso sistema',
+            'phone.required'  => 'Por favor,preencha seu telefone',
 
             'adress.required'  => 'Por favor,preencha seu endereço',
+            'adress.max'  => 'Limite de caracteres atingido',
             
             'email.required'  => 'Por favor,preencha seu email',
+            'email.unique'  => 'O email já esta cadastrado em nosso sistema',
 
             'password.required'  => 'Por favor,insira sua senha',
             'password.confired'  => 'Por favor,redigite sua senha',

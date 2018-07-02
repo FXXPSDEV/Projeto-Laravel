@@ -56,10 +56,12 @@ class Student extends Controller
         $students = User::findOrFail($id);
         return view('Students.delete', ['students' => $students]); 
     }
-    public function update(Request $request, $id) {
+    public function update(StudentRequest $request, $id) {
         $p = User::findOrFail($id);
         $p->name = $request->name;
         $p->email = $request->email;
+        $p->password = $request->password;
+        $p->password_confirmation = $request->password_confirmation;
         $p->cpf = $request->cpf;
         $p->rg = $request->rg;
         $p->adress = $request->adress;
