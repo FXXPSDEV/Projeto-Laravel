@@ -56,12 +56,3 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('/Enrollment/{Enrollments}', 'Enrollment@show');
 
 });
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
