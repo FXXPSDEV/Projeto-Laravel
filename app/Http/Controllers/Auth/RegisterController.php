@@ -41,8 +41,8 @@ class RegisterController extends Controller
             'password' => 'required|string|min:6|confirmed',
             'password_confirmation'=> 'required',
             'type' => User::DEFAULT_TYPE, 
-            'cpf' => 'required|string|max:255|unique:users',
-            'rg' => 'required|string|max:255|unique:users',
+            'cpf' => 'required|string|max:255|unique:users|min:14',
+            'rg' => 'required|string|max:255|unique:users|min:9',
             'phone' => 'required|string|max:255',
             'adress' => 'required|string|max:255',
            
@@ -55,12 +55,12 @@ class RegisterController extends Controller
 
             'cpf.unique'=>'O CPF já está cadastrado em nosso sistema',
             'cpf.required'  => 'Por favor,preencha seu CPF',
-        
+            'cpf.min'  => 'Por favor,preencha um CPF válido',
 
 
             'rg.unique'=>'O RG já está cadastrado em nosso sistema',
             'rg.required'  => 'Por favor,preencha seu RG',
-
+            'rg.min'  => 'Por favor,preencha um RG válido',
           
             'phone.unique'=>'O telefone já está cadastrado em nosso sistema',
             'phone.required'  => 'Por favor,preencha seu telefone',
